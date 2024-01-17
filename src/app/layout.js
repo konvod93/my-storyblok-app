@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
-import StoryblokProvider from '../components/StoryblokProvider';
+import StoryblokBridgeLoader from "@storyblok/react/bridge-loader";
  
 storyblokInit({
   accessToken: "150d3yW7VYN3z79ov3KcxQtt",
@@ -16,11 +16,10 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  return (
-    <StoryblokProvider>
+  return (    
       <html lang="en">
         <body className={inter.className}>{children}</body>
+        <StoryblokBridgeLoader options={{}} />
       </html>
-    </StoryblokProvider>
-  );
+    );
 }
