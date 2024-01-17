@@ -1,5 +1,5 @@
-import { getStoryblokApi} from "@storyblok/react/rsc";
-import StoryblokStory from "@storyblok/react/story";
+import { getStoryblokApi, StoryblokComponent} from "@storyblok/react/rsc";
+
  
  
 export default async function Home() {
@@ -7,8 +7,8 @@ export default async function Home() {
  
   return (
     <div>
-      <h1>Story: {data.story.name}</h1>
-      <StoryblokStory story={data.story} />
+      <h1>Story: {data.story.id}</h1>
+      <StoryblokComponent story={data.story.content} />
     </div>
   );
 }
